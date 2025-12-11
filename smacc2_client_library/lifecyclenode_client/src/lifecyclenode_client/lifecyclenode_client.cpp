@@ -44,7 +44,7 @@ void ClLifecycleNode::changeState(uint8_t state)
   auto request = std::make_shared<lifecycle_msgs::srv::ChangeState::Request>();
   request->transition.id = state;
   auto future = client_change_state_->async_send_request(request);
-  future.wait();
+  // future.wait();
 }
 
 void ClLifecycleNode::activate()
